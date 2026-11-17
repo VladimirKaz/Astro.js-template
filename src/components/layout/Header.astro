@@ -1,0 +1,68 @@
+---
+const links = [
+  { href: "/", label: "Главная" },
+  { href: "/about", label: "О нас" },
+  { href: "/contact", label: "Контакты" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo">Astro Starter</a>
+    <nav class="header__nav">
+      {
+        links.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              "header__link",
+              { "header__link--active": currentPath === href },
+            ]}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 100;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .header__logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .header__link {
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+  }
+
+  .header__link:hover,
+  .header__link--active {
+    color: var(--color-text);
+  }
+</style>
