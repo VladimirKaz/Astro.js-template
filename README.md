@@ -326,4 +326,4 @@ MIT — используй свободно.
 
 - **Автор:** Владимир Казаков
 - **Email:** glck666@gmail.com
-- **GitHub:** [@username](https://github.com/username)
+- **GitHub:** [@VladimirKaz](https://github.com/VladimirKaz)
